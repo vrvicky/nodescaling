@@ -35,14 +35,17 @@ resource "ibm_compute_ssh_key" "orpheus_public_key" {
 # Create a new virtual guest using image "UBUNTU"
 resource "ibm_compute_vm_instance" "UBUNTU" {
   hostname                 = "${var.first_hostname}"
-  image_id                 = 1710043
+  image_id                 = 1670837
   domain                   = "${var.domain}"
   datacenter               = "${var.datacenter}"
   network_speed            = 10
   hourly_billing           = true
   private_network_only     = false
-  cores                    = 8
-  memory                   = 16384
+ # cores                    = 8
+ #memory                   = 16384
+  cores                    = 2
+ memory                   = 2048
+ disks                    = [25, 250]
   user_metadata            = "{\"value\":\"newvalue\"}"
   dedicated_acct_host_only = false
   local_disk               = false
