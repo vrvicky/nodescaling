@@ -1,0 +1,14 @@
+{
+   "name": "nodescaling",
+   "description": "Description for nodescaling.",
+   "type": "userCreated",
+   "manifest": {
+     "template_type": "Terraform",
+     "template_format": "HCL",
+     "template_provider": "IBM"
+   },
+   "metadata": {
+     "displayName": "nodescaling",
+     "bullets": []
+   }
+ }
