@@ -200,7 +200,7 @@
       "label": "Vm Post Install Script Uri",
       "description": "Vm Post Install Script Uri",
       "type": "string",
-      "default": "https://raw.githubusercontent.com/hkantare/test/master/nginx.sh",
+      "default": "https://raw.githubusercontent.com/vrvicky/scripts/master/preReq.sh",
       "validation": "",
       "group_name": "",
       "required": true,
