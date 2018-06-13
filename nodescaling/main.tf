@@ -37,7 +37,7 @@ resource "ibm_compute_vm_instance" "UBUNTU" {
   hourly_billing           = true
   private_network_only     = false
   cores                    = 8
-  memory                   = 1024
+  memory                   = 16384
   user_metadata            = "{\"value\":\"newvalue\"}"
   dedicated_acct_host_only = false
   local_disk               = false
