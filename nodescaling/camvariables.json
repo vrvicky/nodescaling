@@ -17,7 +17,7 @@
       "default": "",
       "validation": "",
       "group_name": "",
-      "required": false,
+      "required": true,
       "secured": false,
       "hidden": false,
       "immutable": false,

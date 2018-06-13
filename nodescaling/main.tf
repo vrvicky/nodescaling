@@ -27,15 +27,15 @@ resource "ibm_compute_ssh_key" "orpheus_public_key" {
   public_key = "${var.public_ssh_key}"
 }
 
-data "ibm_compute_image_template" "UBUNTU_16_04_64" {
+#data "ibm_compute_image_template" "UBUNTU_16_04_64" {
   
-  name = "25GB - Ubuntu / Ubuntu / 16.04-64 Minimal for VSI"
-}
+ # name = "25GB - Ubuntu / Ubuntu / 16.04-64 Minimal for VSI"
+#}
 
 # Create a new virtual guest using image "UBUNTU"
 resource "ibm_compute_vm_instance" "UBUNTU" {
   hostname                 = "${var.first_hostname}"
-  image_id                 ="${data.ibm_compute_image_template.UBUNTU_16_04_64.id}"
+  image_id                 = 1710043
   domain                   = "${var.domain}"
   datacenter               = "${var.datacenter}"
   network_speed            = 10
@@ -46,7 +46,7 @@ resource "ibm_compute_vm_instance" "UBUNTU" {
   user_metadata            = "{\"value\":\"newvalue\"}"
   dedicated_acct_host_only = false
   local_disk               = false
- # ssh_key_ids              = ["${ibm_compute_ssh_key.orpheus_public_key.id}"]
+  ssh_key_ids              = ["${ibm_compute_ssh_key.orpheus_public_key.id}"]
 }
 
 # Create a new virtual guest using image "Ubuntu"
