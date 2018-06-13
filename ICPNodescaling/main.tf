@@ -35,7 +35,8 @@ resource "ibm_compute_ssh_key" "orpheus_public_key" {
 # Create a new virtual guest using image "UBUNTU"
 resource "ibm_compute_vm_instance" "UBUNTU" {
   hostname                 = "${var.first_hostname}"
-  image_id                 = 1670837
+ # image_id                 = 1670837
+ os_reference_code        = "UBUNTU_16_64"
   domain                   = "${var.domain}"
   datacenter               = "${var.datacenter}"
   #network_speed            = 10
