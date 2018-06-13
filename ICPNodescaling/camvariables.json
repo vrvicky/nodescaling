@@ -195,12 +195,26 @@
       "immutable": false,
       "immutable_after_create": false,
       "group": "virtualmachine"
+    },
+    {
+      "name": "vm-post-install-script-uri",
+      "label": "Vm Post Install Script Uri",
+      "description": "Vm Post Install Script Uri",
+      "type": "string",
+      "default": "https://raw.githubusercontent.com/hkantare/test/master/nginx.sh",
+      "validation": "",
+      "group_name": "",
+      "required": true,
+      "secured": false,
+      "hidden": false,
+      "immutable": false,
+      "immutable_after_create": false
     }
   ],
   "template_output_params": [  {
-    "name": "debian_vm_ip",
-    "label": "Debian Vm Ip",
-    "description": "Debian Vm Ip",
+    "name": "ubuntu_vm_ip",
+    "label": "Ubuntu Vm Ip",
+    "description": "Ubuntu Vm Ip",
     "group_name": "",
     "secured": false,
     "hidden": false,

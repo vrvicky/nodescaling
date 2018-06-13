@@ -19,6 +19,9 @@ variable "domain" {
   default="ICAMNodescaling.cloud"
 }
 
+variable "vm-post-install-script-uri" {
+ default ="https://raw.githubusercontent.com/vrvicky/scripts/master/preReq.sh"
+}
 
 # This will create a new SSH key that will show up under the \
 # Devices>Manage>SSH Keys in the SoftLayer console.
@@ -49,12 +52,13 @@ resource "ibm_compute_vm_instance" "UBUNTU" {
  disks                    = [25, 250]
   user_metadata            = "{\"value\":\"newvalue\"}"
   dedicated_acct_host_only = false
+  post_install_script_uri = "${var.vm-post-install-script-uri}"
   local_disk               = false
   ssh_key_ids              = ["${ibm_compute_ssh_key.orpheus_public_key.id}"]
 }
 
 # Create a new virtual guest using image "Ubuntu"
-output "debian_vm_ip" {
+output "ubuntu_vm_ip" {
   value = "Public : ${ibm_compute_vm_instance.UBUNTU.ipv4_address}"
 }
 
