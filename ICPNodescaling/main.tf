@@ -9,7 +9,7 @@ variable "datacenter" {
   default = "sng01"
 }
 
-variable "first_hostname" {
+variable "hostname" {
   description = "Hostname of the first virtual instance (small flavor) to be deployed"
   default     = "virtualserver04"
 }
@@ -20,7 +20,8 @@ variable "domain" {
 }
 
 variable "vm-post-install-script-uri" {
- default ="https://raw.githubusercontent.com/vrvicky/scripts/master/preReq.sh"
+ description="Post install script"
+ default="https://raw.githubusercontent.com/vrvicky/scripts/master/preReq.sh"
 }
 
 # This will create a new SSH key that will show up under the \
@@ -37,7 +38,7 @@ resource "ibm_compute_ssh_key" "orpheus_public_key" {
 
 # Create a new virtual guest using image "UBUNTU"
 resource "ibm_compute_vm_instance" "UBUNTU" {
-  hostname                 = "${var.first_hostname}"
+  hostname                 = "${var.hostname}"
  # image_id                 = 1670837
  os_reference_code        = "UBUNTU_16_64"
   domain                   = "${var.domain}"

@@ -167,8 +167,8 @@
       "group": "virtualmachine"
     },
     {
-      "name": "first_hostname",
-      "label": "First Hostname",
+      "name": "hostname",
+      "label": "Hostname",
       "description": "Hostname of the first virtual instance (small flavor) to be deployed",
       "type": "string",
       "default": "virtualserver04",
@@ -178,8 +178,7 @@
       "secured": false,
       "hidden": false,
       "immutable": false,
-      "immutable_after_create": false,
-      "group": "virtualmachine"
+      "immutable_after_create": false
     },
     {
       "name": "domain",
