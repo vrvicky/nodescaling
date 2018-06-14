@@ -66,4 +66,7 @@ resource "ibm_compute_vm_instance" "UBUNTU" {
 output "ubuntu_vm_ip" {
   value = "Public : ${ibm_compute_vm_instance.UBUNTU.ipv4_address}"
 }
+output "ubuntu_vm_private_ip" {
+  value = "Private : ${ibm_compute_vm_instance.UBUNTU.ipv4_address_private}"
+}
 

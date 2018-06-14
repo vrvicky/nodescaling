@@ -198,7 +198,7 @@
     {
       "name": "vm-post-install-script-uri",
       "label": "Vm Post Install Script Uri",
-      "description": "Vm Post Install Script Uri",
+      "description": "Post install script",
       "type": "string",
       "default": "https://raw.githubusercontent.com/vrvicky/scripts/master/preReq.sh",
       "validation": "",
@@ -210,14 +210,26 @@
       "immutable_after_create": false
     }
   ],
-  "template_output_params": [  {
-    "name": "ubuntu_vm_ip",
-    "label": "Ubuntu Vm Ip",
-    "description": "Ubuntu Vm Ip",
-    "group_name": "",
-    "secured": false,
-    "hidden": false,
-    "shortname": "",
-    "type": "string"
-  } ]
+  "template_output_params": [
+    {
+      "name": "ubuntu_vm_ip",
+      "label": "Ubuntu Vm Ip",
+      "description": "Ubuntu Vm Ip",
+      "group_name": "",
+      "secured": false,
+      "hidden": false,
+      "shortname": "",
+      "type": "string"
+    },
+    {
+      "name": "ubuntu_vm_private_ip",
+      "label": "Ubuntu Vm Private Ip",
+      "description": "Ubuntu Vm Private Ip",
+      "group_name": "",
+      "secured": false,
+      "hidden": false,
+      "shortname": "",
+      "type": "string"
+    }
+  ]
 }
