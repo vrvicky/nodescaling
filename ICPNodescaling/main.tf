@@ -53,9 +53,12 @@ resource "ibm_compute_vm_instance" "UBUNTU" {
  disks                    = [25, 250]
   user_metadata            = "{\"value\":\"newvalue\"}"
   dedicated_acct_host_only = false
-  post_install_script_uri = "${var.vm-post-install-script-uri}"
+#  post_install_script_uri = "${var.vm-post-install-script-uri}"
   local_disk               = false
   ssh_key_ids              = ["${ibm_compute_ssh_key.orpheus_public_key.id}"]
+  provisioner "remote-exec" {
+    scripts = ["preReq.sh", "dockerInstall.sh"]
+  }
 }
 
 # Create a new virtual guest using image "Ubuntu"
