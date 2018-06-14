@@ -43,7 +43,7 @@ resource "ibm_compute_vm_instance" "UBUNTU" {
  os_reference_code        = "UBUNTU_16_64"
   domain                   = "${var.domain}"
   datacenter               = "${var.datacenter}"
-  #network_speed            = 10
+  network_speed            = 1000
   hourly_billing           = true
   private_network_only     = false
  # cores                    = 8
