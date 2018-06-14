@@ -16,7 +16,7 @@ sysctl -w net.ipv4.ip_local_port_range="10240  60999" >> out.log
 echo 'net.ipv4.ip_local_port_range="10240 60999"' | sudo tee -a /etc/sysctl.conf >> out.log
 
 
-bash -c "test -e /usr/bin/python || (apt -qqy update && apt install -qy python-minimal)" >> out.log
+bash -c "test -e /usr/bin/python || (apt -qy update && apt install -qy python-minimal)" >> out.log
 
 
 sudo dpkg --configure -a >> out.log

@@ -3,7 +3,9 @@
 ##      Created 6/14/18 by ucdpadmin.
 ##
 #####################################################################
-sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common >> out.log
+sudo apt-get update  >> out.log
+sudo apt-get update   >> out.log
+sudo apt-get install -qy apt-transport-https ca-certificates curl software-properties-common >> out.log
 
 sudo dpkg --configure -a >> out.log
 
@@ -20,9 +22,10 @@ sudo add-apt-repository \
 
 
 
-sudo apt-get update -y >> out.log
+sudo apt-get update  >> out.log
+sudo apt-get update  >> out.log
 
-sudo dpkg --configure -a >> out.log
+#sudo dpkg --configure -a >> out.log
 
 
 sudo apt-get install -y docker-ce=17.09.0~ce-0~ubuntu

@@ -57,7 +57,8 @@ resource "ibm_compute_vm_instance" "UBUNTU" {
   local_disk               = false
   ssh_key_ids              = ["${ibm_compute_ssh_key.orpheus_public_key.id}"]
   provisioner "remote-exec" {
-    scripts = ["preReq.sh", "dockerInstall.sh"]
+  #  scripts = ["preReq.sh", "dockerInstall.sh"]
+  script = "preReq.sh"
   }
 }
 
