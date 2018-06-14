@@ -48,8 +48,8 @@ resource "ibm_compute_vm_instance" "UBUNTU" {
   private_network_only     = false
  # cores                    = 8
  #memory                   = 16384
-  cores                    = 2
- memory                   = 2048
+  cores                    = 8
+ memory                   = 16384
  disks                    = [25, 250]
   user_metadata            = "{\"value\":\"newvalue\"}"
   dedicated_acct_host_only = false
