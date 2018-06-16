@@ -64,9 +64,9 @@ resource "ibm_compute_vm_instance" "UBUNTU" {
 
 # Create a new virtual guest using image "Ubuntu"
 output "ubuntu_vm_ip" {
-  value = "Public : ${ibm_compute_vm_instance.UBUNTU.ipv4_address}"
+  value = "${ibm_compute_vm_instance.UBUNTU.ipv4_address}"
 }
 output "ubuntu_vm_private_ip" {
-  value = "Private : ${ibm_compute_vm_instance.UBUNTU.ipv4_address_private}"
+  value = "${ibm_compute_vm_instance.UBUNTU.ipv4_address_private}"
 }
 
